@@ -52,11 +52,11 @@ cd ecommerce-analysis
 docker-compose up -d
 ```
 3. **Access pgadmin**
-   -open:`http://localhost:5050`
-   -login
-   -connect to a server
-   -create e-commerce database
-   -create fact and dimension tables
+-open:`http://localhost:5050`
+-login
+-connect to a server
+-create e-commerce database
+-create fact and dimension tables
    
 5. **Access Airflow**
 - Open: `http://localhost:8080`
