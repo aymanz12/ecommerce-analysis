@@ -82,6 +82,6 @@ docker-compose up -d
 - Databricks account
 - Power BI Desktop
 ## 👨‍💻 Author
-Aymane Azaagag - data science student 
+Aymane Azaagag - Data science student 
 GitHub | LinkedIn
 
