@@ -57,11 +57,12 @@ docker-compose up -d
    -connect to a server
    -create e-commerce database
    -create fact and dimension tables
-4. **Access Airflow**
+   
+5. **Access Airflow**
 - Open: `http://localhost:8080`
 - Login
 - Trigger the ETL DAG
-- 
+  
 5. **Run ML pipeline**
 - Upload customer segmentation notebook to Databricks
 - Execute clustering analysis
