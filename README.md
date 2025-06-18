@@ -81,7 +81,7 @@ docker-compose up -d
 - Kaggle API credentials
 - Databricks account
 - Power BI Desktop
-👨‍💻 Author
+## 👨‍💻 Author
 Aymane Azaagag - data science student 
 GitHub | LinkedIn
 
