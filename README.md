@@ -36,7 +36,7 @@ This project builds a complete end-to-end data pipeline for analyzing e-commerce
 
 ### 🔹 Step 2: Customer Segmentation (Spark on Databricks)
 - Perform K-Means clustering
-- Segment customers based on purchase behavior
+- Segment customers based on total spent and total Quantity 
 
 ### 🔹 Step 3: Visualization (Power BI)
 - Connect Power BI to PostgreSQL
@@ -51,4 +51,12 @@ This project builds a complete end-to-end data pipeline for analyzing e-commerce
 ```bash
 git clone https://github.com/aymanz12/ecommerce-analysis.git
 cd ecommerce-analysis
+
+2. **Start Docker containers** for Airflow and PostgreSQL
+
+Make sure you have **Docker** and **Docker Compose** installed.
+
+```bash
+docker-compose up -d
+
 
