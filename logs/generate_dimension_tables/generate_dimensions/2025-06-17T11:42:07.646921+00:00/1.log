@@ -1,0 +1,19 @@
+[2025-06-17 11:42:10,213] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T11:42:07.646921+00:00 [queued]>
+[2025-06-17 11:42:10,223] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T11:42:07.646921+00:00 [queued]>
+[2025-06-17 11:42:10,223] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 11:42:10,224] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2025-06-17 11:42:10,224] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 11:42:10,240] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): generate_dimensions> on 2025-06-17T11:42:07.646921+00:00
+[2025-06-17 11:42:10,246] {standard_task_runner.py:52} INFO - Started process 274 to run task
+[2025-06-17 11:42:10,251] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'generate_dimension_tables', 'generate_dimensions', '2025-06-17T11:42:07.646921+00:00', '--job-id', '9', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/generate_dimension_csvs.py', '--cfg-path', '/tmp/tmpbbwd95eu', '--error-file', '/tmp/tmptljecff4']
+[2025-06-17 11:42:10,252] {standard_task_runner.py:77} INFO - Job 9: Subtask generate_dimensions
+[2025-06-17 11:42:10,310] {logging_mixin.py:104} INFO - Running <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T11:42:07.646921+00:00 [running]> on host 4a50ee51f18e
+[2025-06-17 11:42:10,385] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=generate_dimension_tables
+AIRFLOW_CTX_TASK_ID=generate_dimensions
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T11:42:07.646921+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T11:42:07.646921+00:00
+[2025-06-17 11:42:25,110] {local_task_job.py:151} INFO - Task exited with return code Negsignal.SIGKILL

@@ -1,0 +1,51 @@
+[2025-06-17 20:39:11,153] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T20:39:07.227351+00:00 [queued]>
+[2025-06-17 20:39:11,188] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T20:39:07.227351+00:00 [queued]>
+[2025-06-17 20:39:11,188] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 20:39:11,188] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2025-06-17 20:39:11,189] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 20:39:11,204] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): generate_dimensions> on 2025-06-17T20:39:07.227351+00:00
+[2025-06-17 20:39:11,213] {standard_task_runner.py:52} INFO - Started process 153 to run task
+[2025-06-17 20:39:11,220] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'generate_dimension_tables', 'generate_dimensions', '2025-06-17T20:39:07.227351+00:00', '--job-id', '35', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/generate_dimension_csvs.py', '--cfg-path', '/tmp/tmp4gt78hao', '--error-file', '/tmp/tmpddt4m9ko']
+[2025-06-17 20:39:11,221] {standard_task_runner.py:77} INFO - Job 35: Subtask generate_dimensions
+[2025-06-17 20:39:11,306] {logging_mixin.py:104} INFO - Running <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T20:39:07.227351+00:00 [running]> on host 6731ba937dca
+[2025-06-17 20:39:11,411] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=generate_dimension_tables
+AIRFLOW_CTX_TASK_ID=generate_dimensions
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T20:39:07.227351+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T20:39:07.227351+00:00
+[2025-06-17 20:39:11,412] {generate_dimension_csvs.py:17} INFO - Reading data from /opt/***/data/cleaned/cleaned_data.csv
+[2025-06-17 20:39:11,413] {generate_dimension_csvs.py:25} INFO - First pass: collecting unique dimension values
+[2025-06-17 20:41:25,211] {generate_dimension_csvs.py:42} INFO - Total rows processed: 397884
+[2025-06-17 20:41:25,221] {generate_dimension_csvs.py:45} INFO - Generating customers dimension table
+[2025-06-17 20:41:25,269] {generate_dimension_csvs.py:130} ERROR - Error generating dimension tables: invalid literal for int() with base 10: '12346.0'
+[2025-06-17 20:41:25,269] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/generate_dimension_csvs.py", line 48, in generate_dimension_csvs
+    dim_customer['CustomerID'] = dim_customer['CustomerID'].astype(int)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/generic.py", line 5548, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors,)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/internals/managers.py", line 604, in astype
+    return self.apply("astype", dtype=dtype, copy=copy, errors=errors)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/internals/managers.py", line 409, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/internals/blocks.py", line 595, in astype
+    values = astype_nansafe(vals1d, dtype, copy=True)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/dtypes/cast.py", line 974, in astype_nansafe
+    return lib.astype_intsafe(arr.ravel(), dtype).reshape(arr.shape)
+  File "pandas/_libs/lib.pyx", line 615, in pandas._libs.lib.astype_intsafe
+ValueError: invalid literal for int() with base 10: '12346.0'
+[2025-06-17 20:41:25,315] {taskinstance.py:1551} INFO - Marking task as FAILED. dag_id=generate_dimension_tables, task_id=generate_dimensions, execution_date=20250617T203907, start_date=20250617T203911, end_date=20250617T204125
+[2025-06-17 20:41:25,415] {local_task_job.py:151} INFO - Task exited with return code 1

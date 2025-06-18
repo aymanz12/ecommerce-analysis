@@ -1,0 +1,22 @@
+[2025-06-16 21:25:32,741] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: load_clean_data_ecommerce.clean_data 2025-06-16T21:25:07.951724+00:00 [queued]>
+[2025-06-16 21:25:32,759] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: load_clean_data_ecommerce.clean_data 2025-06-16T21:25:07.951724+00:00 [queued]>
+[2025-06-16 21:25:32,760] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-16 21:25:32,760] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2025-06-16 21:25:32,760] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-16 21:25:32,790] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): clean_data> on 2025-06-16T21:25:07.951724+00:00
+[2025-06-16 21:25:32,799] {standard_task_runner.py:52} INFO - Started process 759 to run task
+[2025-06-16 21:25:32,807] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'load_clean_data_ecommerce', 'clean_data', '2025-06-16T21:25:07.951724+00:00', '--job-id', '12', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/Load_data_dag.py', '--cfg-path', '/tmp/tmp77s7x8g6', '--error-file', '/tmp/tmpq8w0qzp5']
+[2025-06-16 21:25:32,808] {standard_task_runner.py:77} INFO - Job 12: Subtask clean_data
+[2025-06-16 21:25:32,876] {logging_mixin.py:104} INFO - Running <TaskInstance: load_clean_data_ecommerce.clean_data 2025-06-16T21:25:07.951724+00:00 [running]> on host 099b10e5e883
+[2025-06-16 21:25:32,974] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=load_clean_data_ecommerce
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-16T21:25:07.951724+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-16T21:25:07.951724+00:00
+[2025-06-16 21:25:36,500] {python.py:151} INFO - Done. Returned value was: None
+[2025-06-16 21:25:36,524] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=load_clean_data_ecommerce, task_id=clean_data, execution_date=20250616T212507, start_date=20250616T212532, end_date=20250616T212536
+[2025-06-16 21:25:36,571] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-16 21:25:36,613] {local_task_job.py:151} INFO - Task exited with return code 0

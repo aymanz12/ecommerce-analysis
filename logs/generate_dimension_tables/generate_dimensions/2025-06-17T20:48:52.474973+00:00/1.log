@@ -1,0 +1,38 @@
+[2025-06-17 20:48:58,494] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T20:48:52.474973+00:00 [queued]>
+[2025-06-17 20:48:58,524] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T20:48:52.474973+00:00 [queued]>
+[2025-06-17 20:48:58,525] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 20:48:58,525] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2025-06-17 20:48:58,525] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 20:48:58,543] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): generate_dimensions> on 2025-06-17T20:48:52.474973+00:00
+[2025-06-17 20:48:58,550] {standard_task_runner.py:52} INFO - Started process 145 to run task
+[2025-06-17 20:48:58,558] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'generate_dimension_tables', 'generate_dimensions', '2025-06-17T20:48:52.474973+00:00', '--job-id', '37', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/generate_dimension_csvs.py', '--cfg-path', '/tmp/tmpg75bnt2e', '--error-file', '/tmp/tmpc4xruoco']
+[2025-06-17 20:48:58,559] {standard_task_runner.py:77} INFO - Job 37: Subtask generate_dimensions
+[2025-06-17 20:48:58,661] {logging_mixin.py:104} INFO - Running <TaskInstance: generate_dimension_tables.generate_dimensions 2025-06-17T20:48:52.474973+00:00 [running]> on host 85f4dd650f53
+[2025-06-17 20:48:58,772] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=generate_dimension_tables
+AIRFLOW_CTX_TASK_ID=generate_dimensions
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T20:48:52.474973+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T20:48:52.474973+00:00
+[2025-06-17 20:48:58,773] {generate_dimension_csvs.py:17} INFO - Reading data from /opt/***/data/cleaned/cleaned_data.csv
+[2025-06-17 20:48:58,773] {generate_dimension_csvs.py:25} INFO - First pass: collecting unique dimension values
+[2025-06-17 20:50:58,484] {generate_dimension_csvs.py:42} INFO - Total rows processed: 397884
+[2025-06-17 20:50:58,523] {generate_dimension_csvs.py:45} INFO - Generating customers dimension table
+[2025-06-17 20:50:58,572] {generate_dimension_csvs.py:52} INFO - Created customers.csv with 4338 records
+[2025-06-17 20:50:58,572] {generate_dimension_csvs.py:54} INFO - Generating products dimension table
+[2025-06-17 20:50:58,594] {generate_dimension_csvs.py:58} INFO - Created products.csv with 3665 records
+[2025-06-17 20:50:58,595] {generate_dimension_csvs.py:60} INFO - Generating dates dimension table
+[2025-06-17 20:50:58,671] {generate_dimension_csvs.py:78} INFO - Created dates.csv with 305 records
+[2025-06-17 20:50:59,030] {generate_dimension_csvs.py:85} INFO - Generating sales fact table
+[2025-06-17 20:51:01,406] {generate_dimension_csvs.py:110} INFO - Written 100000 sales records to file
+[2025-06-17 20:51:02,312] {generate_dimension_csvs.py:110} INFO - Written 100000 sales records to file
+[2025-06-17 20:51:04,840] {generate_dimension_csvs.py:110} INFO - Written 100000 sales records to file
+[2025-06-17 20:51:08,745] {generate_dimension_csvs.py:121} INFO - Written final 97884 sales records to file
+[2025-06-17 20:51:08,745] {generate_dimension_csvs.py:124} INFO - Created sales.csv with 397884 records
+[2025-06-17 20:51:08,746] {generate_dimension_csvs.py:126} INFO - Successfully generated all dimension and fact tables
+[2025-06-17 20:51:08,785] {python.py:151} INFO - Done. Returned value was: None
+[2025-06-17 20:51:08,846] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=generate_dimension_tables, task_id=generate_dimensions, execution_date=20250617T204852, start_date=20250617T204858, end_date=20250617T205108
+[2025-06-17 20:51:09,004] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-17 20:51:09,071] {local_task_job.py:151} INFO - Task exited with return code 0

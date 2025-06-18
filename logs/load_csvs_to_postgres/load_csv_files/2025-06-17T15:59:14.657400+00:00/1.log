@@ -1,0 +1,39 @@
+[2025-06-17 15:59:16,204] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: load_csvs_to_postgres.load_csv_files 2025-06-17T15:59:14.657400+00:00 [queued]>
+[2025-06-17 15:59:16,225] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: load_csvs_to_postgres.load_csv_files 2025-06-17T15:59:14.657400+00:00 [queued]>
+[2025-06-17 15:59:16,225] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 15:59:16,225] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2025-06-17 15:59:16,225] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 15:59:16,235] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): load_csv_files> on 2025-06-17T15:59:14.657400+00:00
+[2025-06-17 15:59:16,240] {standard_task_runner.py:52} INFO - Started process 596 to run task
+[2025-06-17 15:59:16,244] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'load_csvs_to_postgres', 'load_csv_files', '2025-06-17T15:59:14.657400+00:00', '--job-id', '32', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/load_to_postgres.py', '--cfg-path', '/tmp/tmpidmy4v00', '--error-file', '/tmp/tmpt645bqti']
+[2025-06-17 15:59:16,245] {standard_task_runner.py:77} INFO - Job 32: Subtask load_csv_files
+[2025-06-17 15:59:16,299] {logging_mixin.py:104} INFO - Running <TaskInstance: load_csvs_to_postgres.load_csv_files 2025-06-17T15:59:14.657400+00:00 [running]> on host 34e3ef82d67b
+[2025-06-17 15:59:16,369] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=load_csvs_to_postgres
+AIRFLOW_CTX_TASK_ID=load_csv_files
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T15:59:14.657400+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T15:59:14.657400+00:00
+[2025-06-17 15:59:16,688] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/load_to_postgres.py", line 29, in load_all_tables
+    load_csv_to_postgres("fact_sales", f"{base_path}/sales.csv")
+  File "/opt/airflow/dags/load_to_postgres.py", line 18, in load_csv_to_postgres
+    cur.copy_expert(f"COPY {table_name} FROM STDIN WITH CSV", f)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "United Kingdom"
+CONTEXT:  COPY fact_sales, line 1, column customer_key: "United Kingdom"
+
+[2025-06-17 15:59:16,692] {taskinstance.py:1551} INFO - Marking task as FAILED. dag_id=load_csvs_to_postgres, task_id=load_csv_files, execution_date=20250617T155914, start_date=20250617T155916, end_date=20250617T155916
+[2025-06-17 15:59:16,738] {local_task_job.py:151} INFO - Task exited with return code 1

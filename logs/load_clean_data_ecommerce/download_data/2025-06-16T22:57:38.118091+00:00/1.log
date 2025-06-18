@@ -1,0 +1,24 @@
+[2025-06-16 22:57:52,225] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: load_clean_data_ecommerce.download_data 2025-06-16T22:57:38.118091+00:00 [queued]>
+[2025-06-16 22:57:52,242] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: load_clean_data_ecommerce.download_data 2025-06-16T22:57:38.118091+00:00 [queued]>
+[2025-06-16 22:57:52,242] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-16 22:57:52,242] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2025-06-16 22:57:52,242] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-16 22:57:52,264] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): download_data> on 2025-06-16T22:57:38.118091+00:00
+[2025-06-16 22:57:52,297] {standard_task_runner.py:52} INFO - Started process 180 to run task
+[2025-06-16 22:57:52,304] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'load_clean_data_ecommerce', 'download_data', '2025-06-16T22:57:38.118091+00:00', '--job-id', '3', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/Load_data_dag.py', '--cfg-path', '/tmp/tmproqj9u1u', '--error-file', '/tmp/tmpb9d1xc8i']
+[2025-06-16 22:57:52,305] {standard_task_runner.py:77} INFO - Job 3: Subtask download_data
+[2025-06-16 22:57:52,470] {logging_mixin.py:104} INFO - Running <TaskInstance: load_clean_data_ecommerce.download_data 2025-06-16T22:57:38.118091+00:00 [running]> on host dd40c2b2cc41
+[2025-06-16 22:57:52,595] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=load_clean_data_ecommerce
+AIRFLOW_CTX_TASK_ID=download_data
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-16T22:57:38.118091+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-16T22:57:38.118091+00:00
+[2025-06-16 22:57:52,603] {logging_mixin.py:104} INFO - Warning: Your Kaggle API key is readable by other users on this system! To fix this, you can run 'chmod 600 /home/***/.kaggle/kaggle.json'
+[2025-06-16 22:57:52,609] {logging_mixin.py:104} INFO - Dataset URL: https://www.kaggle.com/datasets/carrie1/ecommerce-data
+[2025-06-16 22:58:32,027] {python.py:151} INFO - Done. Returned value was: None
+[2025-06-16 22:58:32,050] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=load_clean_data_ecommerce, task_id=download_data, execution_date=20250616T225738, start_date=20250616T225752, end_date=20250616T225832
+[2025-06-16 22:58:32,116] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-16 22:58:32,136] {local_task_job.py:151} INFO - Task exited with return code 0
