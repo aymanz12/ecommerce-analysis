@@ -51,17 +51,22 @@ cd ecommerce-analysis
 ```bash
 docker-compose up -d
 ```
-
-3. **Access Airflow**
+3. **Access pgadmin**
+   -open:`http://localhost:5050`
+   -login
+   -connect to a server
+   -create e-commerce database
+   -create fact and dimension tables
+4. **Access Airflow**
 - Open: `http://localhost:8080`
 - Login
 - Trigger the ETL DAG
-
-4. **Run ML pipeline**
+- 
+5. **Run ML pipeline**
 - Upload customer segmentation notebook to Databricks
 - Execute clustering analysis
 
-5. **Create dashboards**
+6. **Create dashboards**
 - Connect Power BI to PostgreSQL
 - Import dashboard template
 - Visualize insights
